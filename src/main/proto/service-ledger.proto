@@ -1,0 +1,19 @@
+syntax = "proto3";
+package io.dazraf.ledger;
+import "empty.proto";
+
+message Amount {
+    bool negative = 1;
+    uint64 pounds = 2;
+    uint32 pence = 3;
+}
+
+message LedgerNotification {
+    string fromAccountId = 1;
+    string toAccountId = 2;
+    Amount amount = 3;
+}
+
+service LedgerService {
+    rpc LedgerNotifications(Empty) returns (stream LedgerNotification);
+}
