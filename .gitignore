@@ -2,3 +2,4 @@
 *.iml
 target
 .vertx
+src/main/java/io/dazraf/ledger/proto
